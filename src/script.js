@@ -12,8 +12,10 @@ class Produto {
 
         if (this.validarCampos(produto)); {
             this.adicionar(produto)
+
         }
 
+        this.limpar()
         this.listaTabela();
 
     }
@@ -37,10 +39,10 @@ class Produto {
             td_id.classList.add('center');
 
             let imgEditar = document.createElement('img');
-            imgEditar.src = 'img/edit.png'
+            imgEditar.src = 'assets/edit.png'
 
             let imgDeletar = document.createElement('img');
-            imgDeletar.src = 'img/delete.png'
+            imgDeletar.src = 'assets/delete.png'
 
             td_acao.appendChild(imgEditar);
             td_acao.appendChild(imgDeletar)
@@ -79,7 +81,7 @@ class Produto {
         return true;
     }
 
-    cancelar(){
+    limpar(){
         document.getElementById('produto').value = '';
         document.getElementById('valorProduto').value = '';
     }
@@ -92,6 +94,6 @@ btnADD.addEventListener('click', () => {
 });
 
 btnCancelar.addEventListener('click', () => {
-    produto.cancelar();
+    produto.limpar();
 });
 
