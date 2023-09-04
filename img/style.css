@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+
+* {
+    margin: 0
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f1f1;
+}
+
+header {
+    letter-spacing: 2px;
+    padding: 10px;
+    text-align: center;
+    color: rgb(255, 95, 37);
+    background-color: #f0f1f1;
+}
+
+main {
+    padding: 30px 50px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+#inputProduto {
+    display: grid;
+}
+
+#inputValor {
+    display: grid;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: 0;
+}
+
+button {
+    border: 0;
+    padding: 10px;
+    outline: 0;
+    background-color: rgb(255, 95, 37);
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all ease .3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(227, 85, 33);
+
+}
+
+.conteudo {
+    margin-top: 15px;
+
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #c0bfbf;
+    width: 100%;
+}
+
+table th {
+    background-color: #d6d6d6;
+}
+
+table th,
+td {
+    text-align: left;
+    padding: 1px 5px;
+}
+
+table td img {
+    width: 22px;
+}
+
+.center {
+    text-align: center;
+}
