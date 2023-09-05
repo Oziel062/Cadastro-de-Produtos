@@ -10,21 +10,21 @@ class Produto {
     salvar() {
         let produto = this.lerDados();
 
-        if (this.validarCampos(produto)); {
+        if (this.validarCampos(produto)) {
             this.adicionar(produto)
 
         }
 
-        this.limpar()
         this.listaTabela();
+        this.limpar()
 
     }
 
-    listaTabela(){
-        let tbody= document.getElementById('tbody');
+    listaTabela() {
+        let tbody = document.getElementById('tbody');
         tbody.innerText = ''
 
-        for(let i = 0; i < this.arrayProdutos.length; i++){
+        for (let i = 0; i < this.arrayProdutos.length; i++) {
             let tr = tbody.insertRow();
 
             let td_id = tr.insertCell();
@@ -39,17 +39,20 @@ class Produto {
             td_id.classList.add('center');
 
             let imgEditar = document.createElement('img');
-            imgEditar.src = 'assets/edit.png'
+            imgEditar.src = 'assets/edit.png';
 
             let imgDeletar = document.createElement('img');
-            imgDeletar.src = 'assets/delete.png'
+            imgDeletar.src = 'assets/delete.png';
+            imgDeletar.setAttribute("onclick", "produto.deletar(" + this.arrayProdutos[i].id + ")");
+            imgDeletar.style.cursor = 'pointer';
+
 
             td_acao.appendChild(imgEditar);
             td_acao.appendChild(imgDeletar)
         }
     }
 
-    adicionar(produto){
+    adicionar(produto) {
         this.arrayProdutos.push(produto);
         this.id++;
     }
@@ -81,10 +84,25 @@ class Produto {
         return true;
     }
 
-    limpar(){
+    limpar() {
         document.getElementById('produto').value = '';
         document.getElementById('valorProduto').value = '';
     }
+
+    deletar(id) {
+        if(confirm('Deseja deletar o produto do ID ' + id)){
+            let tbody = document.getElementById('tbody');
+
+            for (let i = 0; i < this.arrayProdutos.length; i++) {
+                if(this.arrayProdutos[i].id == id) {
+                    this.arrayProdutos.splice(i, 1)
+                    tbody.deleteRow(i)
+                }
+            }
+        }
+        
+    }
+
 }
 
 var produto = new Produto;
